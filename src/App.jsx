@@ -25,10 +25,10 @@ export const mockData = [
 ]
 
 function App() {
-  return <div>
+  return <>
     <h1>Writing unit test cases with React using Jest and React Testing Library</h1>
     <TestWithMockData data={mockData} />
-  </div>;
+  </>;
 }
 
 export default App;
