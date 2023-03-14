@@ -28,4 +28,29 @@ describe("TestingStateChange Component", () => {
 
     expect(screen.getByText(/toggle text/i)).toBeDisabled();
   });
+
+  test("Testing adding elements to list on button click", async () => {
+    render(<TestingStateChange />);
+
+    expect(screen.getAllByTestId('record').length).toBe(3);
+
+    await waitFor(() => {
+      userEvent.click(screen.getByText(/add to list/i));
+    });
+
+    expect(screen.getAllByTestId('record').length).toBe(4);
+  });
+
+  test("Testing removing elements from the list on button click", async () => {
+    render(<TestingStateChange />);
+
+    expect(screen.getAllByTestId('record').length).toBe(3);
+
+    await waitFor(() => {
+      userEvent.click(screen.getByText(/remove from list/i));
+    });
+
+    expect(screen.getAllByTestId('record').length).toBe(2);
+  });
+
 });
