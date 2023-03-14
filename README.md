@@ -1,4 +1,4 @@
-# **React Unit Testing with Jest and React testing Library**
+# **React Unit Testing with Jest and React Testing Library**
 
 ## **How Is a Test Structured?**
 Testing involves checking if your code is functioning as it's supposed to by comparing the expected output with the actual output.
