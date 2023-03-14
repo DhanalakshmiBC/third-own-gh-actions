@@ -1,5 +1,22 @@
 # **React Unit Testing with Jest and React testing Library**
 
+## **How Is a Test Structured?**
+Testing involves checking if your code is functioning as it's supposed to by comparing the expected output with the actual output.
+
+## **What to Test?**
+
+- If a component renders with or without props
+- How a component renders with state changes
+- How a component reacts to user interactions
+
+## **What Not to Test**
+Testing most of your code is important, but here are some things you do not need to test:
+
+- **Actual Implementation:** You do not need to test the actual implementation of a functionality. Just test if the component is behaving correctly.
+
+- **Third Party libraries:** If you are using any third party libraries like Material UI, no need to test those – they should already be tried and tested.
+
+**Here are some methods and important points regarding unit testing:**
 
 - **jest.mock() -** Jest.Mock works best when wanting to mock entire files: which contain named or default exports or specific named or default exports of a file for the entire duration of the test.
 
