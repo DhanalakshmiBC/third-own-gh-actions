@@ -18,4 +18,14 @@ describe("TestingStateChange Component", () => {
 
     expect(screen.getByText(/text visible/i)).toBeInTheDocument();
   });
+
+  test("Testing disabled on button click", async () => {
+    render(<TestingStateChange />);
+
+    await waitFor(() => {
+      userEvent.click(screen.getByText(/toggle button disabled/i));
+    });
+
+    expect(screen.getByText(/toggle text/i)).toBeDisabled();
+  });
 });
