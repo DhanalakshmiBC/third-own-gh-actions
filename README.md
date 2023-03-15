@@ -1,4 +1,4 @@
-# **React Unit Testing with Jest and React testing Library**
+# **React Unit Testing with Jest and React Testing Library**
 
 ## **What is Jest ?**
 Jest is a JavaScript testing framework that is used for unit testing, snapshot testing, and coverage reporting. Jest can be used to test React components, and it is also often used with React Native.
