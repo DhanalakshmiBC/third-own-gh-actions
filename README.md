@@ -1,5 +1,16 @@
 # **React Unit Testing with Jest and React testing Library**
 
+## **What is Jest ?**
+Jest is a JavaScript testing framework that is used for unit testing, snapshot testing, and coverage reporting. Jest can be used to test React components, and it is also often used with React Native.
+
+## **What is React Testing Library ?**
+React Testing Library is a JavaScript testing utility built specifically to test React components. It simulates user interactions on isolated components and asserts their outputs to ensure the UI is behaving correctly.
+
+React Testing Library provides virtual DOMs for testing React components.
+
+Any time we run tests without a web browser, we must have a virtual DOM to render the app, interact with the elements, and observe if the virtual DOM behaves like it should (like changing the width of a div on a button click).
+
+
 ## **How Is a Test Structured?**
 Testing involves checking if your code is functioning as it's supposed to by comparing the expected output with the actual output.
 
@@ -112,13 +123,15 @@ The @testing-library/jest-dom library provides a set of custom jest matchers tha
        - **queryBy:** returns the matching node if one match is found and null if no match is found, however will throw an error if multiple matches are found.
        - **queryAllBy:** returns an array of matching nodes if at least one match is found and an empty array if no match is found.
        
-      *Tip :* Use these methods if you are looking to confirm presence of an element / elements. 
+      *Tip :* Use these methods if you are looking to confirm presence of an element / elements. Use this to test if element is not there.
 
     - **find:**
       - **find:** returns a promise that returns the matching node, however will throw an error if multiple matches or no matches are found.
        - **findAllBy:** returns a promise that returns an array of matching nodes if at least one match is found and throws an error if no match is found.
        
-      *Tip :* Use these methods if the element / elements being queried might display asynchronously (for example, if your element is expected to only display after an event is fired consider using find as it retries the query after some time).     
+      *Tip :* Use these methods if the element / elements being queried might display asynchronously (for example, if your element is expected to only display after an event is fired consider using find as it retries the query after some time).
+
+- **fireEvent.change()** triggers only a change event whereas **userEvent.type** triggers a change event, but also keyDown, keyPress, and keyUp events.           
 
 
 
