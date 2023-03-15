@@ -131,7 +131,38 @@ The @testing-library/jest-dom library provides a set of custom jest matchers tha
        
       *Tip :* Use these methods if the element / elements being queried might display asynchronously (for example, if your element is expected to only display after an event is fired consider using find as it retries the query after some time).
 
-- **fireEvent.change()** triggers only a change event whereas **userEvent.type** triggers a change event, but also keyDown, keyPress, and keyUp events.           
+- **fireEvent.change() -** triggers only a change event whereas **userEvent.type** triggers a change event, but also keyDown, keyPress, and keyUp events.   
+
+- **logRoles -** It print out a list of all the implicit ARIA roles within a tree of DOM nodes, each role containing a list of all the nodes which match that role.
+
+    ```jsx
+    // Person.test.tsx
+
+    import { render, logRoles } from "@testing-library/react";
+    import { Person } from "./Person";
+
+      describe("Person", () => {
+        test("renders correctly", () => {
+          const view = render(<Person />);
+          logRoles(view.container);
+        });
+     });
+    ```
+- **logTestingPlaygroundURL() -** This method on the screen object can help you write correct queries by generating a URL when the test is run. Clicking on the link will open the Testing Playground tool with your component HTML already in place. You can then select an element to identify the best way to query an element for your test.
+
+    ```jsx
+    // Person.test.tsx
+
+    import { render, screen } from "@testing-library/react";
+    import { Person } from "./Person";
+
+    describe("Person", () => {
+      test("renders correctly", () => {
+        render(<Person />);
+        screen.logTestingPlaygroundURL();
+      });
+    }); 
+    ```
 
 
 
