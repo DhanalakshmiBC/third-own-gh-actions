@@ -10,6 +10,24 @@ React Testing Library provides virtual DOMs for testing React components.
 
 Any time we run tests without a web browser, we must have a virtual DOM to render the app, interact with the elements, and observe if the virtual DOM behaves like it should (like changing the width of a div on a button click).
 
+## **Types of Testing?**
+- **Unit Testing:** 
+  - Test the individual blocks of an application such as a class or a function or a component.
+  - Each unit is tested in isolation,independent of other units
+  - Dependencies are mocked
+  - Takes less time to test
+  - Easy to write and maintain
+
+- **Integration Testing:** 
+  - Test the combination of units and ensure they are working together
+  - Take more time than unit tests
+
+- **End to End(E2E) Testing:** 
+  - Test the entire application flow and ensure it works as designed from start to finish
+  - Involve real UI, database, API
+  - Take longest time
+  - Cost implication as you interact with real api that maybe charged based on no. of requests
+
 
 ## **How Is a Test Structured?**
 Testing involves checking if your code is functioning as it's supposed to by comparing the expected output with the actual output.
