@@ -28,6 +28,9 @@ Any time we run tests without a web browser, we must have a virtual DOM to rende
   - Take longest time
   - Cost implication as you interact with real api that maybe charged based on no. of requests
 
+## **What is TDD?**
+  Test Driven Development (TDD) is a software development practice that focuses on creating unit test cases before developing the actual code. It is an iterative approach combining programming, unit test creation, and refactoring.  
+
 
 ## **How Is a Test Structured?**
 Testing involves checking if your code is functioning as it's supposed to by comparing the expected output with the actual output.
@@ -181,6 +184,11 @@ The @testing-library/jest-dom library provides a set of custom jest matchers tha
       });
     }); 
     ```
+
+- Some Miscellaneous points:
+  - In react project created by CRA, jest watch mode is automatically enabled and it tracks only file changes from last commit which makes the testing fast.   
+  - **test.only()** will make test a particular block and skip other blocks in a file.
+  - **test.skip()** will skip particular block and test other blocks in a file.
 
 
 
