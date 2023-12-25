@@ -48,6 +48,17 @@ Testing most of your code is important, but here are some things you do not need
 
 - **Third Party libraries:** If you are using any third party libraries like Material UI, no need to test those – they should already be tried and tested.
 
+## **How to group Tests?**
+**Using describe**, we can group multiple test.
+```ts
+// describe(name,fn) Syntax
+
+describe("Group",()=>{
+  test("test1",()=>{})
+  test("test2",()=>{})
+})
+```
+
 **Here are some methods and important points regarding unit testing:**
 
 - **jest.mock() -** Jest.Mock works best when wanting to mock entire files: which contain named or default exports or specific named or default exports of a file for the entire duration of the test.
@@ -185,10 +196,13 @@ The @testing-library/jest-dom library provides a set of custom jest matchers tha
     }); 
     ```
 
-- Some Miscellaneous points:
+- *Some Miscellaneous points*:
   - In react project created by CRA, jest watch mode is automatically enabled and it tracks only file changes from last commit which makes the testing fast.   
-  - **test.only()** will make test a particular block and skip other blocks in a file.
-  - **test.skip()** will skip particular block and test other blocks in a file.
+  - **test.only()** will make test a particular block test and skip other blocks in a file.
+  - **test.skip()** will skip a particular block and test other blocks in a file.
+  - File/Folder convention:
+      - Create file with .test or .spec with any extension .js/.ts/.jsx/.tsx (Ex: 1.test.ts, 2.spec.jsx)
+      - or Create a folder __test__ and then create file with extension .js/.ts/.jsx/.tsx
 
 
 

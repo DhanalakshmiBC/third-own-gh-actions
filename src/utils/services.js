@@ -1,7 +1,5 @@
-export const FetchData = () => {
-    return fetch("http://localhost:3000/data.json")
-        .then(res => {
-            return res.json();
-        })
+export async function FetchData (){
+    const res = await fetch("http://localhost:3000/data.json");
+    return await res.json();
     
 }
