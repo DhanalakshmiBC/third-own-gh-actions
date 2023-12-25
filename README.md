@@ -175,6 +175,17 @@ The @testing-library/jest-dom library provides a set of custom jest matchers tha
       ```js
       const passwordInput = screen.getByText("This is paragraph");
       ```
+    - **getByDisplayValue** will search for element whose value matches with display value.
+
+      Typically used for input,select or textarea.
+
+      ```html
+      <input type="test" value="test"/>
+      ```
+
+      ```js
+      const inputValue = screen.getByDisplayValue("test");
+      ```      
 
 - React Testing Library (RTL) gives developers methods to find elements on the component it rendered for testing, these methods are called queries. There are 3 main types of RTL query types namely get, find and query.
 
