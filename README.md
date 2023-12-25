@@ -103,44 +103,62 @@ The @testing-library/jest-dom library provides a set of custom jest matchers tha
 
 - **How to query input fields and buttons ?** 
 
-    ```
+    ```html
      <input placeholder='Enter name'/>
      <button> Submit </button> 
     ```
 
    To query these elements we can use:
-    ```
+    ```js
     const inputElement = screen.getByRole('textbox')
     ```
+    
     **getByRole** finds an element by the given role. 
     
     You can see a list of roles for different elements [here](https://www.w3.org/TR/html-aria/#docconformance).
 
 
-    For multiple element of same role we can use *getByPlaceholderText*:
+    ```js
+    screen.getByRole('button', { name: /submit/i })
     ```
-    const nameInput = screen.getByPlaceholderText(/enter name/i);
-    ```
-    We can also use *getByLabelText()* if your input has a label.
-    ```
-    <label htmlFor='password'> Enter password</label>
-    <input type='password' id='password'/>
-    ```
-    ```
-    const passwordInput = screen.getByLabelText(/enter password/i);
-    ````
 
-    For multiple buttons we can use *getByRole* with name or other attribute otherwise it will throw error.
+      For multiple buttons we can use *getByRole* with name or other attribute otherwise it will throw error.
 
-    ```
+    ```html
     <button> Submit </button>
     <button> Apply</button>
     ```
 
-    ```
+    ```js
     const submitButton = screen.getByRole('button', { name: /submit/i });
-    
     const applyButton = screen.getByRole('button', { name: /apply/i });
+    ```
+   -----
+
+    We can also use *getByPlaceholderText*:
+
+    ```js
+    const nameInput = screen.getByPlaceholderText(/enter name/i);
+    ```
+    ----
+
+    We can also use *getByLabelText()* if your input has a label.
+      - htmlFor as well as element enclosed with label tag with their inner text works with getByLabelText().
+    ```js
+    <label htmlFor='password'> Enter password</label>
+    <input type='password' id='password'/>
+    ```
+
+    ```js
+      const passwordInput = screen.getByLabelText(/enter password/i);
+    ```
+
+    For multiple element with same label name, we can use a second argument object with attribute **selector** which accepts value as HTML type. 
+
+    ```js
+      const passwordInput = screen.getByLabelText(/enter password/i,{
+        selector:"input"
+      });
     ```
 
 - React Testing Library (RTL) gives developers methods to find elements on the component it rendered for testing, these methods are called queries. There are 3 main types of RTL query types namely get, find and query.
