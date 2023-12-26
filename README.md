@@ -251,7 +251,7 @@ The @testing-library/jest-dom library provides a set of custom jest matchers tha
 
       **Note:** By default findBy wait for *1000ms* so to overcome this we can pass a second argument object with attribute timeout.
       ```js
-      const element = screen.findByTest("test",{
+      const element = await screen.findByTest("test",{
         timeout: 2000
       });
       ```
