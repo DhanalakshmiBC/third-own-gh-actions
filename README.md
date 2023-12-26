@@ -256,7 +256,9 @@ The @testing-library/jest-dom library provides a set of custom jest matchers tha
       });
       ```
 
-- **fireEvent.change() -** triggers only a change event whereas **userEvent.type** triggers a change event, but also keyDown, keyPress, and keyUp events.   
+- **User Interactions:**
+  - **fireEvent** triggers only a change event  
+  - **userEvent** full interaction, multiple events and more. It is the recommended approach.   
 
 - **logRoles -** It print out a list of all the implicit ARIA roles within a tree of DOM nodes, each role containing a list of all the nodes which match that role.
 
