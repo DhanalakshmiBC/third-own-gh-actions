@@ -218,7 +218,16 @@ The @testing-library/jest-dom library provides a set of custom jest matchers tha
 
       ```js
       const element = screen.getByTestId("test");
-      ```   
+      ``` 
+  ***Priority to use these methods to find elements:***
+    - getByRole
+    - getByLabelText
+    - getByPlaceholderText
+    - getByText
+    - getByDisplayValue
+    - getByAltText
+    - getByTitle
+    - getByTestId      
 
 - React Testing Library (RTL) gives developers methods to find elements on the component it rendered for testing, these methods are called queries. There are 3 main types of RTL query types namely get, find and query.
 
