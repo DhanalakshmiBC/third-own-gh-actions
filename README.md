@@ -256,9 +256,11 @@ The @testing-library/jest-dom library provides a set of custom jest matchers tha
       });
       ```
 
-- **User Interactions:**
+- **User Interactions:** All events return Promise.
   - **fireEvent** triggers only a change event  
   - **userEvent** full interaction, multiple events and more. It is the recommended approach.   
+
+  **Convenience API's -** click(),dblClick(),tripleClick(),hover(),unhover()
 
 - **logRoles -** It print out a list of all the implicit ARIA roles within a tree of DOM nodes, each role containing a list of all the nodes which match that role.
 
