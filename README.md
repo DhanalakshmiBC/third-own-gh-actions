@@ -120,7 +120,7 @@ The @testing-library/jest-dom library provides a set of custom jest matchers tha
       const inputElement = screen.getByRole('textbox')
       ```
 
-      For multiple buttons we can use *getByRole* with name or other attribute otherwise it will throw error.
+      For multiple elements with same role we can use *getByRole* with name or other attribute otherwise it will throw error.
 
       ```html
       <button> Submit </button>
