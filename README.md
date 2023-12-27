@@ -277,7 +277,7 @@ The @testing-library/jest-dom library provides a set of custom jest matchers tha
         });
      });
     ```
-- **logTestingPlaygroundURL() -** This method on the screen object can help you write correct queries by generating a URL when the test is run. Clicking on the link will open the Testing Playground tool with your component HTML already in place. You can then select an element to identify the best way to query an element for your test.
+- **logTestingPlaygroundURL() -** This method on the screen object can help you write correct queries by generating a URL when the test is run. Clicking on the link will open the Testing Playground tool with your component HTML already in place. You can then select an element to identify the best way to query an element for your test or can download Chrome extenstion.
 
     ```jsx
     // Person.test.tsx
@@ -292,6 +292,13 @@ The @testing-library/jest-dom library provides a set of custom jest matchers tha
       });
     }); 
     ```
+- **Providers**: To handle providers, pass second argument in render function with attribute wrapper.
+  ```ts
+    render(<App/>,{
+      wrapper: AppProviders
+    })
+  ```    
+  Also if want to use Provider for all components so instead of passing wrapper to individual render fn, we can create custom render fn [found here](https://testing-library.com/docs/react-testing-library/setup).
 
 - *Some Miscellaneous points*:
   - In react project created by CRA, jest watch mode is automatically enabled and it tracks only file changes from last commit which makes the testing fast.   
