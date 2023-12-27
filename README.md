@@ -300,6 +300,21 @@ The @testing-library/jest-dom library provides a set of custom jest matchers tha
   ```    
   Also if want to use Provider for all components so instead of passing wrapper to individual render fn, we can create custom render fn [found here](https://testing-library.com/docs/react-testing-library/setup).
 
+- **Custom Hooks**: To test custom hooks RTL provides a method *renderHook* which returns result we test with *result.current*
+   ```ts
+   const {result}= renderHook(useCustom);
+   expect(result.current.count).toBe(0)
+  ```  
+  To test with custom hooks with props, we can pass a second argument with attribute *initialProps*.
+  ```ts
+   const {result}= renderHook(useCustom,{
+    initialProps: {
+      count:10
+    }
+   });
+   expect(result.current.count).toBe(0)
+  ```  
+
 - *Some Miscellaneous points*:
   - In react project created by CRA, jest watch mode is automatically enabled and it tracks only file changes from last commit which makes the testing fast.   
   - **test.only()** will make test a particular block test and skip other blocks in a file.
