@@ -323,6 +323,8 @@ The @testing-library/jest-dom library provides a set of custom jest matchers tha
       - Create file with .test or .spec with any extension .js/.ts/.jsx/.tsx (Ex: 1.test.ts, 2.spec.jsx)
       - or Create a folder __test__ and then create file with extension .js/.ts/.jsx/.tsx
 
+- [React testing Library Cheatsheet.](https://testing-library.com/docs/react-testing-library/cheatsheet/)
+
 
 
 
