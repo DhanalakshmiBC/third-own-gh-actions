@@ -1,18 +1,17 @@
-name: third-workflow
+name: deepu-workflow
 on: push
 jobs:
-    tests:
+    test:
         runs-on: ubuntu-latest
         steps:
-            - name: download code
-              uses: actions/checkout@v2
-            - name: install nodejs
-              uses: actions/setup-node@v2
+            - name: Get code 
+              uses: actions/checkout@v3
+            - name: Install NodeJS
+              uses: actions/setup-node@v3
               with:
-                    node-version: '18'
-            - name: install dependenciew
-              uses: npm ci
-            - name: run tests
-              uses: npm test
+                node-version: '16'
 
-              
+            - name: Install dependencies
+              run: npm ci
+            - name: Run tests
+              run: npm test
