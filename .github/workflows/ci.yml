@@ -1,4 +1,4 @@
-name: third-actions
+name: third-workflow
 on: push
 jobs:
     tests:
