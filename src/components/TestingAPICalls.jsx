@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { FetchData } from "../utils/Services";
+import { FetchData } from "../utils/services";
 
 const TestingAPICalls = () => {
   const [data, setData] = useState([]);
