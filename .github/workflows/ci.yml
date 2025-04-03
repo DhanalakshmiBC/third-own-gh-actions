@@ -14,5 +14,20 @@ jobs:
               run: npm ci
             - name: run tests
               run: npm test
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: download code
+              uses: actions/checkout@v3
+            - name: set up nodejs
+              uses: actions/setup-node@v3
+              with: 
+                node-version: '18'
+            - name: Instal dependency
+              run: npm ci
+            - name: build application
+              run: npm run build
+            - name: display progress
+              run: echo "buidling your app deepu"
 
               
