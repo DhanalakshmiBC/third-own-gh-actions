@@ -11,6 +11,6 @@ jobs:
               with: 
                 node-version: '18'
             - name: Instal dependency
-              uses: npm ci
+              run: npm ci
 
               
